@@ -1,8 +1,10 @@
 <template>
 <section id="section_description" :class="{isIntersecting: entry.isIntersecting}">
   <div class="container">
+    <div class="time-seen">{{ timeSeenString }}</div>
+    
     <h2>What is the Intersection Observer</h2>
-    <p>The Intersection Observer API provides a way to observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport.</p>
+    <p>The Intersection Observer API provides the means to observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport.</p>
     <p>The Intersection Observer consists of four components:</p>
     <ul>
       <li>the "root", which is the parent element the observer is tied to, can be the viewport</li>
@@ -17,11 +19,24 @@
 </template>
 
 <script>
+import { value } from 'vue-function-api';
+import { timeSeenFunction } from '../functions/utils';
+
 export default {
   name: 'section-description',
 
   props: {
     entry: Object
+  },
+
+  setup (props) {
+    let timeSeenString = value(null);
+    
+    timeSeenFunction(props, timeSeenString);
+
+    return {
+      timeSeenString
+    }
   }
 }
 </script>

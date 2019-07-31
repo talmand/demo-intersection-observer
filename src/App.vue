@@ -13,16 +13,16 @@
 </template>
 
 <script>
-import { onMounted, value } from 'vue-function-api'
+import { onMounted, value } from 'vue-function-api';
 
-import PositionIndicator from './components/PositionIndicator.vue'
-import SectionTitle from './components/SectionTitle.vue'
-import SectionDescription from './components/SectionDescription.vue'
-import SectionPerformance from './components/SectionPerformance.vue'
-import SectionBasicExample from './components/SectionBasicExample.vue'
-import SectionCallbackEntries from './components/SectionCallbackEntries.vue'
-import SectionSetups from './components/SectionSetups.vue'
-import SectionBrowsers from './components/SectionBrowsers.vue'
+import PositionIndicator from './components/PositionIndicator.vue';
+import SectionTitle from './components/SectionTitle.vue';
+import SectionDescription from './components/SectionDescription.vue';
+import SectionPerformance from './components/SectionPerformance.vue';
+import SectionBasicExample from './components/SectionBasicExample.vue';
+import SectionCallbackEntries from './components/SectionCallbackEntries.vue';
+import SectionSetups from './components/SectionSetups.vue';
+import SectionBrowsers from './components/SectionBrowsers.vue';
 
 export default {
   name: 'app',
@@ -46,20 +46,21 @@ export default {
     };
     let io_observer = null;
     let io_entries = value({
-      title: { section: 'title', isIntersecting: false },
-      description: { section: 'description', isIntersecting: false },
-      performance: { section: 'performance', isIntersecting: false },
-      basicExample: { section: 'basicExample', isIntersecting: false },
-      callbackEntries: { section: 'callbackEntries', isIntersecting: false },
-      setups: { section: 'setups', isIntersecting: false },
-      browsers: { section: 'browsers', isIntersecting: false }
+      title: { section: 'title', isIntersecting: false, time: null },
+      description: { section: 'description', isIntersecting: false, time: null },
+      performance: { section: 'performance', isIntersecting: false, time: null },
+      basicExample: { section: 'basicExample', isIntersecting: false, time: null },
+      callbackEntries: { section: 'callbackEntries', isIntersecting: false, time: null },
+      setups: { section: 'setups', isIntersecting: false, time: null },
+      browsers: { section: 'browsers', isIntersecting: false, time: null }
     });
 
     const io_callback = (entries) => {
       entries.forEach(entry => {
         io_entries.value[entry.target.dataset.section] = {
           section: entry.target.dataset.section,
-          isIntersecting: entry.isIntersecting
+          isIntersecting: entry.isIntersecting,
+          time: entry.time
         };
       });
     };
@@ -142,6 +143,9 @@ ul {
     padding-left: 1rem;
   }
 }
+pre {
+  font-size: 1.6rem !important;
+}
 
 section {
   display: flex;
@@ -166,4 +170,16 @@ section {
     width: 75vw;
   }
 }
+
+.time-seen {
+  font-size: 1.4rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.fade-enter,
+.fade-leave-to { opacity: 0; }
+.fade-enter-active,
+.fade-leave-active { transition: 0.25s; }
 </style>

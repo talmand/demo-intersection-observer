@@ -1,13 +1,13 @@
 <template>
 <nav id="position_indicator">
-  <div
+  <button
     v-for="entry in entries"
     :key="entry.section"
     class="indicator"
     :class="{current: entry.isIntersecting}"
     :data-target="entry.section"
     @click="scrollToTarget"
-  ></div>
+  ></button>
 </nav>
 </template>
 
@@ -51,11 +51,14 @@ nav {
 }
 .indicator {
   align-items: center;
+  background: none;
+  border-style: none;
   cursor: pointer;
   display: flex;
   height: 3rem;
   justify-content: center;
   margin-bottom: 0.5rem;
+  padding: 0;
   width: 3rem;
 
   &:last-child {
@@ -68,13 +71,13 @@ nav {
     display: block;
     height: 50%;
     opacity: 0.25;
-    transition: 0.25s;
+    transition: 0.5s;
     width: 50%;
   }
   &.current::after {
-    height: 100%;
+    height: 90%;
     opacity: 1;
-    width: 100%;
+    width: 90%;
   }
 }
 </style>
