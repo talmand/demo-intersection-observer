@@ -9,6 +9,7 @@
     <SectionCallbackEntries data-section="callbackEntries" :entry="io_entries.callbackEntries" />
     <SectionSetups data-section="setups" :entry="io_entries.setups" />
     <SectionBrowsers data-section="browsers" :entry="io_entries.browsers" />
+    <SectionObserverV2 data-section="observerV2" :entry="io_entries.observerV2" />
   </div>
 </template>
 
@@ -23,6 +24,7 @@ import SectionBasicExample from './components/SectionBasicExample.vue';
 import SectionCallbackEntries from './components/SectionCallbackEntries.vue';
 import SectionSetups from './components/SectionSetups.vue';
 import SectionBrowsers from './components/SectionBrowsers.vue';
+import SectionObserverV2 from './components/SectionObserverV2.vue';
 
 export default {
   name: 'app',
@@ -35,7 +37,8 @@ export default {
     SectionBasicExample,
     SectionCallbackEntries,
     SectionSetups,
-    SectionBrowsers
+    SectionBrowsers,
+    SectionObserverV2
   },
 
   setup() {
@@ -52,7 +55,8 @@ export default {
       basicExample: { section: 'basicExample', isIntersecting: false, time: null },
       callbackEntries: { section: 'callbackEntries', isIntersecting: false, time: null },
       setups: { section: 'setups', isIntersecting: false, time: null },
-      browsers: { section: 'browsers', isIntersecting: false, time: null }
+      browsers: { section: 'browsers', isIntersecting: false, time: null },
+      observerV2: { section: 'observerV2', isIntersecting: false, time: null }
     });
 
     const io_callback = (entries) => {
@@ -93,7 +97,7 @@ html {
 }
 
 body {
-  background-color: #E0E0E0;
+  background-color: #333333;
   color: #333333;
   height: 100vh;
   overflow: auto;
@@ -129,8 +133,8 @@ h2 {
 }
 p {
   font-size: 2rem;
-  line-height: 1.6;
-  margin: 1rem 0;
+  line-height: 1.25;
+  margin: 0 0 2rem 0;
 }
 ul {
   font-size: 2rem;
@@ -145,6 +149,7 @@ ul {
 }
 pre {
   font-size: 1.6rem !important;
+  margin: 0 0 3rem 0 !important;
 }
 
 section {
@@ -159,7 +164,9 @@ section {
 
   .container {
     align-items: stretch;
-    background-color: #C5C5C5;
+    background-color: #F5F5F5;
+    border: 7px solid rebeccapurple;
+    border-radius: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
