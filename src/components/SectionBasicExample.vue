@@ -83,26 +83,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section .container {
-  justify-content: flex-start;
-}
-
 .panel {
   margin: 2rem 0;
-
-  button {
-    background-color: #F5F5F5;
-    border: 3px solid #E0E0E0;
-    cursor: pointer;
-    font-size: 1.6rem;
-    margin: 0 2rem 0 0;
-    padding: 0.5rem 1rem;
-    transition: 0.25s 0.25s;
-
-    &.active {
-      border: 3px solid rebeccapurple;
-      transition: 0.25s;
-    }
-  }
+  position: absolute;
+  top: 50px;
 }
 </style>

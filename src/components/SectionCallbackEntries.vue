@@ -16,13 +16,13 @@
     height: 5.5, width: 500
     x: 0, y: 507.5
   }
-  isIntersecting: false
+  isIntersecting: true
   rootBounds: {
     bottom: 513, left: 0, right: 500, top: 0
     height: 513, width: 500
     x: 0, y: 0
   }
-  target: &lt;div id="spacer"&gt;
+  target: &lt;div id="target"&gt;
   time: 363
 }</prism>
 

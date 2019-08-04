@@ -7,7 +7,9 @@
     <SectionPerformance data-section="performance" :entry="io_entries.performance" />
     <SectionBasicExample data-section="basicExample" :entry="io_entries.basicExample" />
     <SectionCallbackEntries data-section="callbackEntries" :entry="io_entries.callbackEntries" />
+    <SectionRatio data-section="ratio" :entry="io_entries.ratio" />
     <SectionSetups data-section="setups" :entry="io_entries.setups" />
+    <SectionWhere data-section="where" :entry="io_entries.where" />
     <SectionBrowsers data-section="browsers" :entry="io_entries.browsers" />
     <SectionObserverV2 data-section="observerV2" :entry="io_entries.observerV2" />
   </div>
@@ -22,7 +24,9 @@ import SectionDescription from './components/SectionDescription.vue';
 import SectionPerformance from './components/SectionPerformance.vue';
 import SectionBasicExample from './components/SectionBasicExample.vue';
 import SectionCallbackEntries from './components/SectionCallbackEntries.vue';
+import SectionRatio from './components/SectionRatio.vue';
 import SectionSetups from './components/SectionSetups.vue';
+import SectionWhere from './components/SectionWhere.vue';
 import SectionBrowsers from './components/SectionBrowsers.vue';
 import SectionObserverV2 from './components/SectionObserverV2.vue';
 
@@ -36,7 +40,9 @@ export default {
     SectionPerformance,
     SectionBasicExample,
     SectionCallbackEntries,
+    SectionRatio,
     SectionSetups,
+    SectionWhere,
     SectionBrowsers,
     SectionObserverV2
   },
@@ -54,7 +60,9 @@ export default {
       performance: { section: 'performance', isIntersecting: false, time: null },
       basicExample: { section: 'basicExample', isIntersecting: false, time: null },
       callbackEntries: { section: 'callbackEntries', isIntersecting: false, time: null },
+      ratio: { section: 'ratio', isIntersecting: false, time: null },
       setups: { section: 'setups', isIntersecting: false, time: null },
+      where: { section: 'where', isIntersecting: false, time: null },
       browsers: { section: 'browsers', isIntersecting: false, time: null },
       observerV2: { section: 'observerV2', isIntersecting: false, time: null }
     });
@@ -119,6 +127,9 @@ h2 {
   font-size: 3rem;
   margin: 2rem 0;
   padding: 0 0 0 2rem;
+  position: absolute;
+  top: 0;
+  width: 75%;
 
   &::after {
     border-bottom: 2px solid #333333;
@@ -131,16 +142,25 @@ h2 {
     width: 0;
   }
 }
-p {
+h3 {
   font-size: 2rem;
+  font-weight: bold;
+  margin: 2rem 0;
+}
+p {
+  font-size: 1.8rem;
   line-height: 1.25;
   margin: 0 0 2rem 0;
+}
+small {
+  font-size: 1.2rem;
+  margin: 1rem;
 }
 ul {
   font-size: 2rem;
   line-height: 1.6;
   list-style-type: decimal-leading-zero;
-  margin: 1rem 0;
+  margin: 1rem 0 2rem;
   padding-left: 5rem;
 
   li {
@@ -148,9 +168,25 @@ ul {
   }
 }
 pre {
-  font-size: 1.6rem !important;
+  font-size: 1.4rem !important;
   margin: 0 0 3rem 0 !important;
 }
+button {
+    background-color: #F5F5F5;
+    border: 3px solid #C5C5C5;
+    color: #C5C5C5;
+    cursor: pointer;
+    font-size: 1.6rem;
+    margin: 0 2rem 0 0;
+    padding: 0.5rem 1rem;
+    transition: 0.25s 0.25s;
+
+    &.active {
+      border: 3px solid rebeccapurple;
+      color: rebeccapurple;
+      transition: 0.25s;
+    }
+  }
 
 section {
   display: flex;

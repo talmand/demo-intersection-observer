@@ -3,7 +3,7 @@
   <div class="container">
     <div class="time-seen">{{ timeSeenString }}</div>
     
-    <h2>What is the Intersection Observer</h2>
+    <h2>What is the Intersection Observer?</h2>
     <p>The Intersection Observer API provides the means to observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport.</p>
     <p>The Intersection Observer consists of four components:</p>
     <ul>

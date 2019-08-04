@@ -57,10 +57,10 @@ nav {
   display: flex;
   height: 3rem;
   justify-content: center;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem 0;
   padding: 0;
   width: 3rem;
-
+  
   &:last-child {
     margin-bottom: 0;
   }
