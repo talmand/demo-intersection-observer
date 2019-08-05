@@ -6,7 +6,7 @@
     <h2>Demo: Where Is It?</h2>
     <div class="demo">
       <div class="demo-left">
-        <h3>Finding Position</h3>
+        <h3>Finding position</h3>
         <p>Data from the IntersectionObserverEntry can be used to determine where the target element is in relation to the root element.</p>
 <prism language="javascript">const io_callback = (entries) => {
   entries.forEach(entry => {
@@ -66,7 +66,6 @@ export default {
 
   setup (props, context) {
     let isTargetSmall = value(false);
-    let io_observer = null;
     let timeSeenString = value(null);
     let positionString = value(null);
 
@@ -93,7 +92,7 @@ export default {
     timeSeenFunction(props, timeSeenString);
 
     onMounted(() => {
-      io_observer = new IntersectionObserver(io_callback, { root: context.refs.root, threshold: [0, 0.9, 1] });
+      let io_observer = new IntersectionObserver(io_callback, { root: context.refs.root, threshold: [0, 0.5, 1] });
       io_observer.observe(context.refs.target);
     });
 
@@ -131,9 +130,11 @@ export default {
   background-image: radial-gradient(ellipse at center, #ffffff 0%,#ffffff 14%,#663399 15%,#663399 34%,#ffffff 35%,#ffffff 50%,#663399 51%,#663399 99%);
   background-position: center;
   background-repeat: no-repeat;
-  height: 400px;
+  background-size: 300px 300px;
+  height: 500px;
+  margin: auto;
   transition: 0.25s;
-  width: 394px;
+  width: 300px;
 
   &.small {
     background-size: 200px;

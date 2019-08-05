@@ -7,8 +7,8 @@
     <SectionPerformance data-section="performance" :entry="io_entries.performance" />
     <SectionBasicExample data-section="basicExample" :entry="io_entries.basicExample" />
     <SectionCallbackEntries data-section="callbackEntries" :entry="io_entries.callbackEntries" />
-    <SectionRatio data-section="ratio" :entry="io_entries.ratio" />
     <SectionSetups data-section="setups" :entry="io_entries.setups" />
+    <SectionRatio data-section="ratio" :entry="io_entries.ratio" />
     <SectionWhere data-section="where" :entry="io_entries.where" />
     <SectionBrowsers data-section="browsers" :entry="io_entries.browsers" />
     <SectionObserverV2 data-section="observerV2" :entry="io_entries.observerV2" />
@@ -24,8 +24,8 @@ import SectionDescription from './components/SectionDescription.vue';
 import SectionPerformance from './components/SectionPerformance.vue';
 import SectionBasicExample from './components/SectionBasicExample.vue';
 import SectionCallbackEntries from './components/SectionCallbackEntries.vue';
-import SectionRatio from './components/SectionRatio.vue';
 import SectionSetups from './components/SectionSetups.vue';
+import SectionRatio from './components/SectionRatio.vue';
 import SectionWhere from './components/SectionWhere.vue';
 import SectionBrowsers from './components/SectionBrowsers.vue';
 import SectionObserverV2 from './components/SectionObserverV2.vue';
@@ -40,8 +40,8 @@ export default {
     SectionPerformance,
     SectionBasicExample,
     SectionCallbackEntries,
-    SectionRatio,
     SectionSetups,
+    SectionRatio,
     SectionWhere,
     SectionBrowsers,
     SectionObserverV2
@@ -60,8 +60,8 @@ export default {
       performance: { section: 'performance', isIntersecting: false, time: null },
       basicExample: { section: 'basicExample', isIntersecting: false, time: null },
       callbackEntries: { section: 'callbackEntries', isIntersecting: false, time: null },
-      ratio: { section: 'ratio', isIntersecting: false, time: null },
       setups: { section: 'setups', isIntersecting: false, time: null },
+      ratio: { section: 'ratio', isIntersecting: false, time: null },
       where: { section: 'where', isIntersecting: false, time: null },
       browsers: { section: 'browsers', isIntersecting: false, time: null },
       observerV2: { section: 'observerV2', isIntersecting: false, time: null }
