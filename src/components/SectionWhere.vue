@@ -6,7 +6,7 @@
     <h2>Demo: Where Is It?</h2>
     <div class="demo">
       <div class="demo-left">
-        <h3>Finding position</h3>
+        <h3>Finding the position</h3>
         <p>Data from the IntersectionObserverEntry can be used to determine where the target element is in relation to the root element.</p>
 <prism language="javascript">const io_callback = (entries) => {
   entries.forEach(entry => {
@@ -135,7 +135,6 @@ export default {
   margin: auto;
   transition: 0.25s;
   width: 300px;
-
   &.small {
     background-size: 200px;
     height: 200px;

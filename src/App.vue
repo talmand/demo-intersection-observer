@@ -10,6 +10,7 @@
     <SectionSetups data-section="setups" :entry="io_entries.setups" />
     <SectionRatio data-section="ratio" :entry="io_entries.ratio" />
     <SectionWhere data-section="where" :entry="io_entries.where" />
+    <SectionTransitions data-section="transitions" :entry="io_entries.transitions" />
     <SectionBrowsers data-section="browsers" :entry="io_entries.browsers" />
     <SectionObserverV2 data-section="observerV2" :entry="io_entries.observerV2" />
   </div>
@@ -27,6 +28,7 @@ import SectionCallbackEntries from './components/SectionCallbackEntries.vue';
 import SectionSetups from './components/SectionSetups.vue';
 import SectionRatio from './components/SectionRatio.vue';
 import SectionWhere from './components/SectionWhere.vue';
+import SectionTransitions from './components/SectionTransitions.vue';
 import SectionBrowsers from './components/SectionBrowsers.vue';
 import SectionObserverV2 from './components/SectionObserverV2.vue';
 
@@ -43,6 +45,7 @@ export default {
     SectionSetups,
     SectionRatio,
     SectionWhere,
+    SectionTransitions,
     SectionBrowsers,
     SectionObserverV2
   },
@@ -63,6 +66,7 @@ export default {
       setups: { section: 'setups', isIntersecting: false, time: null },
       ratio: { section: 'ratio', isIntersecting: false, time: null },
       where: { section: 'where', isIntersecting: false, time: null },
+      transitions: { section: 'transitions', isIntersecting: false, time: null },
       browsers: { section: 'browsers', isIntersecting: false, time: null },
       observerV2: { section: 'observerV2', isIntersecting: false, time: null }
     });
@@ -202,7 +206,6 @@ section {
     align-items: stretch;
     background-color: #F5F5F5;
     border: 7px solid rebeccapurple;
-    border-radius: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -225,4 +228,30 @@ section {
 .fade-leave-to { opacity: 0; }
 .fade-enter-active,
 .fade-leave-active { transition: 0.25s; }
+
+.slide-left-enter { opacity: 0; transform: scale3d(2, 0.5, 1) translate3d(200px, 0, 0); }
+.slide-right-enter { opacity: 0; transform: scale3d(2, 0.5, 1) translate3d(-200px, 0, 0); }
+.slide-down-enter { opacity: 0; transform: scale3d(2, 0.5, 1) translate3d(0, -200px, 0); }
+.slide-down-enter { opacity: 0; transform: scale3d(2, 0.5, 1) translate3d(0, 200px, 0); }
+.slide-left-enter-to,
+.slide-right-enter-to,
+.slide-down-enter-to,
+.slide-up-enter-to { transform: scale3d(1, 1, 1); }
+.slide-left-enter-active, .slide-left-leave-active,
+.slide-right-enter-active, .slide-right-leave-active,
+.slide-down-enter-active, .slide-down-leave-active,
+.slide-up-enter-active, .slide-up-leave-active { transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+.slide-left-leave { transform: scale3d(1, 1, 1); }
+.slide-left-leave-to { opacity: 0; transform: scale3d(2, 0.5, 1) translate3d(-200px, 0, 0); }
+.slide-right-leave-to { opacity: 0; transform: scale3d(2, 0.5, 1) translate3d(200px, 0, 0); }
+.slide-down-leave-to { opacity: 0; transform: scale3d(2, 0.5, 1) translate3d(0, 200px, 0); }
+.slide-down-leave-to { opacity: 0; transform: scale3d(2, 0.5, 1) translate3d(0, -200px, 0); }
+
+.rotate-enter { transform: perspective(2000px) rotate3d(0, 1, 0, 90deg); }
+.rotate-enter-active, .rotate-leave-active { transition: 0.5s cubic-bezier(0.645, 0.045, 0.355, 1); }
+.rotate-leave-to { transform: perspective(2000px) rotate3d(0, 1, 0, -90deg); }
+
+.spin-enter { transform: perspective(500px) rotate3d(0, 0, 1, 90deg); }
+.spin-enter-active, .spin-leave-active { transition: 0.5s cubic-bezier(0.645, 0.045, 0.355, 1); }
+.spin-leave-to { transform: perspective(500px) rotate3d(0, 0, 1, -90deg); }
 </style>

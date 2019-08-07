@@ -119,7 +119,7 @@ export default {
   pointer-events: none;
   transition: 0.5s;
   width: 300px;
-
+  
   &.left {
     opacity: 0.5;
     transform: translate3d(-200px, 0, 0);
