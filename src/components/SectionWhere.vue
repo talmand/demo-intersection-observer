@@ -32,7 +32,7 @@
       </div>
       <div class="demo-right">
         <small>Scroll the target into view and its position will be displayed below.</small>
-        <div ref="root" class="root">
+        <div ref="root" class="root" :class="{ large: isRootLarge }">
           <div class="buffer"></div>
           <div ref="target" class="target" :class="{ small: isTargetSmall }"></div>
           <div class="buffer"></div>
@@ -40,7 +40,10 @@
         <div class="output">
           {{ positionString }}
         </div>
-        <button @click="isTargetSmall = !isTargetSmall" class="active">toggle target size</button>
+        <div>
+          <button @click="isTargetSmall = !isTargetSmall" class="active">toggle target size</button>
+          <button @click="isRootLarge = !isRootLarge" class="active">toggle root size</button>
+        </div>
       </div>
     </div>
 
@@ -65,6 +68,7 @@ export default {
   },
 
   setup (props, context) {
+    let isRootLarge = value(false);
     let isTargetSmall = value(false);
     let timeSeenString = value(null);
     let positionString = value(null);
@@ -98,6 +102,7 @@ export default {
 
     return {
       isTargetSmall,
+      isRootLarge,
       timeSeenString,
       positionString
     }
@@ -123,7 +128,12 @@ export default {
   border: 3px solid rebeccapurple;
   height: 400px;
   overflow-x: scroll;
+  transition: 0.25s;
   width: 400px;
+
+  &.large {
+    height: 600px;
+  }
 }
 .target {
   background-color: rebeccapurple;
@@ -135,6 +145,7 @@ export default {
   margin: auto;
   transition: 0.25s;
   width: 300px;
+
   &.small {
     background-size: 200px;
     height: 200px;

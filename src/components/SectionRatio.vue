@@ -7,10 +7,10 @@
 
     <div class="demo">
       <div class="demo-left">
-        <h3>Understanding the ratio</h3>
+        <h3>Understanding the intersectionRatio property</h3>
         <p>The intersectionRatio is the area of the intersectionRect, which is determined by the area of the target element that is intersecting the root element area. Since the calculated boundaries are all based on rectangles the math is not difficult, but the observer calculates it automatically.</p>
         <p>By itself the intersectionRatio doesn't indicate anything about the target element itself, such as position. The result is the same 0.5 whether the target is half off the horizontal versus half off the vertical.</p>
-        <p>If the target element is larger in some way then the root element, then it's not possible for the intersectionRatio to ever hit 1; or a full 100%. If writing code that depends on that result, then it must be accounted for.</p>
+        <p>If the target element is larger in some way then the root element, then it's not possible for the intersectionRatio to ever hit 1; or a full 100%. If writing code that depends on that result, then this must be accounted for.</p>
         <p>Also note, the calculation is not always the most accurate. For instance, it's possible to see a result of 1 or 0.9 when the target element is fully intersecting the root element. This also must be accounted for in code that is dependent on that result.</p>
       </div>
       <div class="demo-right">

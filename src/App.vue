@@ -11,8 +11,10 @@
     <SectionRatio data-section="ratio" :entry="io_entries.ratio" />
     <SectionWhere data-section="where" :entry="io_entries.where" />
     <SectionTransitions data-section="transitions" :entry="io_entries.transitions" />
+    <SectionScrollingEvents data-section="scrolling" :entry="io_entries.scrolling" />
     <SectionBrowsers data-section="browsers" :entry="io_entries.browsers" />
     <SectionObserverV2 data-section="observerV2" :entry="io_entries.observerV2" />
+    <SectionCredits data-section="credits" :entry="io_entries.credits" />
   </div>
 </template>
 
@@ -29,8 +31,10 @@ import SectionSetups from './components/SectionSetups.vue';
 import SectionRatio from './components/SectionRatio.vue';
 import SectionWhere from './components/SectionWhere.vue';
 import SectionTransitions from './components/SectionTransitions.vue';
+import SectionScrollingEvents from './components/SectionScrollingEvents.vue';
 import SectionBrowsers from './components/SectionBrowsers.vue';
 import SectionObserverV2 from './components/SectionObserverV2.vue';
+import SectionCredits from './components/SectionCredits.vue';
 
 export default {
   name: 'app',
@@ -46,8 +50,10 @@ export default {
     SectionRatio,
     SectionWhere,
     SectionTransitions,
+    SectionScrollingEvents,
     SectionBrowsers,
-    SectionObserverV2
+    SectionObserverV2,
+    SectionCredits
   },
 
   setup() {
@@ -67,8 +73,10 @@ export default {
       ratio: { section: 'ratio', isIntersecting: false, time: null },
       where: { section: 'where', isIntersecting: false, time: null },
       transitions: { section: 'transitions', isIntersecting: false, time: null },
+      scrolling: { section: 'scrolling', isIntersecting: false, time: null },
       browsers: { section: 'browsers', isIntersecting: false, time: null },
-      observerV2: { section: 'observerV2', isIntersecting: false, time: null }
+      observerV2: { section: 'observerV2', isIntersecting: false, time: null },
+      credits: { section: 'credits', isIntersecting: false, time: null }
     });
 
     const io_callback = (entries) => {
