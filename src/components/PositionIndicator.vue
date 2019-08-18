@@ -69,15 +69,15 @@ nav {
     border-radius: 50%;
     content: '';
     display: block;
-    height: 50%;
+    height: 2rem;
     opacity: 0.25;
     transition: 0.5s;
-    width: 50%;
+    width: 2rem;
   }
   &.current::after {
-    height: 90%;
+    height: 3rem;
     opacity: 1;
-    width: 90%;
+    width: 3rem;
   }
 }
 </style>

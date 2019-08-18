@@ -4,7 +4,6 @@
     <div class="time-seen">{{ timeSeenString }}</div>
 
     <h2>Demo: The Intersection Ratio</h2>
-
     <div class="demo">
       <div class="demo-left">
         <h3>Understanding the intersectionRatio property</h3>
@@ -22,10 +21,10 @@
           <p>intersectionRatio: {{ intersectionRatio }}</p>
         </div>
         <div class="buttons">
+          <button :class="{ active: moveTarget === '' }" @click="moveTarget = ''">center</button>
           <button :class="{ active: moveTarget === 'left' }" @click="moveTarget = 'left'">left</button>
           <button :class="{ active: moveTarget === 'top' }" @click="moveTarget = 'top'">top</button>
           <button :class="{ active: moveTarget === 'corner' }" @click="moveTarget = 'corner'">corner</button>
-          <button :class="{ active: moveTarget === '' }" @click="moveTarget = ''">center</button>
           <button :class="{ active: moveTarget === 'large' }" @click="moveTarget = 'large'">large</button>
         </div>
       </div>

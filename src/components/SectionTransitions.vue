@@ -5,15 +5,15 @@
 
     <h2>Demo: Vue Transitions While Intersecting</h2>
     <div class="panel">
-      <button @click="show = 'mounted'" :class="{active: show == 'mounted'}">onMounted()</button>
-      <button @click="show = 'callback'" :class="{active: show == 'callback'}">callback</button>
-      <button @click="show = 'html'" :class="{active: show == 'html'}">html</button>
+      <button @click="show = 'mounted'" :class="{active: show === 'mounted'}">onMounted()</button>
+      <button @click="show = 'callback'" :class="{active: show === 'callback'}">callback</button>
+      <button @click="show = 'html'" :class="{active: show === 'html'}">html</button>
     </div>
 
     <div class="demo">
       <div class="demo-left">
         <transition name="fade" mode="out-in">
-          <div v-if="show == 'mounted'" key="mounted">
+          <div v-if="show === 'mounted'" key="mounted">
             <p>This is the onMounted function for this component.</p>
 <prism language="javascript">onMounted(() => {
   let io_observer = new IntersectionObserver(io_callback, {
@@ -30,7 +30,7 @@
             <p>The context refs is used to observe the target container which has the ref attribute value of "target".</p>
             <p>Then a loop is done on all the children of the target container that have the class "target-child" so that each of those can be observed by the same observer.</p>
           </div>
-          <div v-else-if="show == 'callback'" key="callback">
+          <div v-else-if="show === 'callback'" key="callback">
             <p>This is the callback function of the IntersectionObserver of this component.</p>
 <prism language="javascript">const io_callback = (entries) => {
   entries.forEach(entry => {
@@ -49,7 +49,7 @@
             <p>If the entry has the class "target" then the targetKey and targetString variables are updated to change the key and text of the headlines of the target container. The key has to be updated with the text so that the transition effect will trigger. </p>
             <p>Then an object is updated to reflect the current state of the target children so that each will trigger their transitions as needed.</p>
           </div>
-          <div v-else-if="show == 'html'" key="html">
+          <div v-else-if="show === 'html'" key="html">
             <p>Here is the HTML of the target container and its children.</p>
 <prism language="html">&lt;div ref="target" class="target"&gt;
   &lt;transition name="fade" mode="out-in"&gt;

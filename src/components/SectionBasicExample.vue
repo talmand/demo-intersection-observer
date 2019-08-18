@@ -5,13 +5,13 @@
 
     <h2>The Basic Example</h2>
     <div class="panel">
-      <button @click="show = 'code'" :class="{active: show == 'code'}">observer code</button>
-      <button @click="show = 'observer'" :class="{active: show == 'observer'}">observer object</button>
+      <button @click="show = 'code'" :class="{active: show === 'code'}">observer code</button>
+      <button @click="show = 'observer'" :class="{active: show === 'observer'}">observer object</button>
     </div>
 
 <transition name="fade" mode="out-in">
 
-<div v-if="show == 'code'" key="code">
+<div v-if="show === 'code'" key="code">
 <prism language="javascript">const options = [
   root: document.body,
   rootMargin: '0px',
@@ -36,7 +36,7 @@ observer.observe(targetElement);
 <p>A single intersection observer can observe more than one target element that requires the same functionality from the observer's callback function.</p>
 </div>
 
-<div v-else-if="show == 'observer'" key="observer">
+<div v-else-if="show === 'observer'" key="observer">
 <prism language="javascript">IntersectionObserver {
   root: &lt;body&gt;,
   rootMargin: '0px 0px 0px 0px',
