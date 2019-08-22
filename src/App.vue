@@ -4,12 +4,13 @@
 
     <SectionTitle data-section="title" :entry="io_entries.title" />
     <SectionDescription data-section="description" :entry="io_entries.description" />
-    <SectionPerformance data-section="performance" :entry="io_entries.performance" />
     <SectionBasicExample data-section="basicExample" :entry="io_entries.basicExample" />
     <SectionCallbackEntries data-section="callbackEntries" :entry="io_entries.callbackEntries" />
     <SectionSetups data-section="setups" :entry="io_entries.setups" />
+    <SectionPerformance data-section="performance" :entry="io_entries.performance" />
     <SectionRatio data-section="ratio" :entry="io_entries.ratio" />
     <SectionWhere data-section="where" :entry="io_entries.where" />
+    <SectionPositionSticky data-section="sticky" :entry="io_entries.sticky" />
     <SectionTransitions data-section="transitions" :entry="io_entries.transitions" />
     <SectionScrollingEvents data-section="scrolling" :entry="io_entries.scrolling" />
     <SectionBrowsers data-section="browsers" :entry="io_entries.browsers" />
@@ -24,12 +25,13 @@ import { onMounted, value } from 'vue-function-api';
 import PositionIndicator from './components/PositionIndicator.vue';
 import SectionTitle from './components/SectionTitle.vue';
 import SectionDescription from './components/SectionDescription.vue';
-import SectionPerformance from './components/SectionPerformance.vue';
 import SectionBasicExample from './components/SectionBasicExample.vue';
 import SectionCallbackEntries from './components/SectionCallbackEntries.vue';
 import SectionSetups from './components/SectionSetups.vue';
+import SectionPerformance from './components/SectionPerformance.vue';
 import SectionRatio from './components/SectionRatio.vue';
 import SectionWhere from './components/SectionWhere.vue';
+import SectionPositionSticky from './components/SectionPositionSticky.vue';
 import SectionTransitions from './components/SectionTransitions.vue';
 import SectionScrollingEvents from './components/SectionScrollingEvents.vue';
 import SectionBrowsers from './components/SectionBrowsers.vue';
@@ -43,12 +45,13 @@ export default {
     PositionIndicator,
     SectionTitle,
     SectionDescription,
-    SectionPerformance,
     SectionBasicExample,
     SectionCallbackEntries,
     SectionSetups,
+    SectionPerformance,
     SectionRatio,
     SectionWhere,
+    SectionPositionSticky,
     SectionTransitions,
     SectionScrollingEvents,
     SectionBrowsers,
@@ -66,12 +69,13 @@ export default {
     let io_entries = value({
       title: { section: 'title', isIntersecting: false, time: null },
       description: { section: 'description', isIntersecting: false, time: null },
-      performance: { section: 'performance', isIntersecting: false, time: null },
       basicExample: { section: 'basicExample', isIntersecting: false, time: null },
       callbackEntries: { section: 'callbackEntries', isIntersecting: false, time: null },
       setups: { section: 'setups', isIntersecting: false, time: null },
+      performance: { section: 'performance', isIntersecting: false, time: null },
       ratio: { section: 'ratio', isIntersecting: false, time: null },
       where: { section: 'where', isIntersecting: false, time: null },
+      sticky: { section: 'sticky', isIntersecting: false, time: null },
       transitions: { section: 'transitions', isIntersecting: false, time: null },
       scrolling: { section: 'scrolling', isIntersecting: false, time: null },
       browsers: { section: 'browsers', isIntersecting: false, time: null },
