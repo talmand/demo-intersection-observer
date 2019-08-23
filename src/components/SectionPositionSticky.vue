@@ -23,11 +23,8 @@
             <h3>Javascript:</h3>
 <prism language="javascript">const io_callback = (entries) => {
   entries.forEach(entry => {
-    let boundingRect = entry.boundingClientRect;
-    let intersectionRect = entry.intersectionRect;
-
     if (stickyCodeActive.value) {
-      targetSticky.value = boundingRect.top === intersectionRect.top || boundingRect.top &gt; intersectionRect.top;
+      targetSticky.value = entry.isIntersecting;
       targetText.value = targetSticky.value ? 'sticky' : 'not sticky';
     } else {
       targetText.value = 'not awesome';
@@ -107,11 +104,8 @@ export default {
 
     const io_callback = (entries) => {
       entries.forEach(entry => {
-        let boundingRect = entry.boundingClientRect;
-        let intersectionRect = entry.intersectionRect;
-
         if (stickyCodeActive.value) {
-          targetSticky.value = boundingRect.top === intersectionRect.top || boundingRect.top < intersectionRect.top;
+          targetSticky.value = entry.isIntersecting;
           targetText.value = targetSticky.value ? 'sticky' : 'not sticky';
         } else {
           targetText.value = 'not awesome';

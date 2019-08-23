@@ -6,6 +6,7 @@
     class="indicator"
     :class="{current: entry.isIntersecting}"
     :data-target="entry.section"
+    :title="entry.section"
     @click="scrollToTarget"
   ></button>
 </nav>

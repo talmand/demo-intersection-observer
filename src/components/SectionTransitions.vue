@@ -218,7 +218,8 @@ export default {
 .target {
   border-bottom: 7px solid rebeccapurple;
   border-top: 7px solid rebeccapurple;
-  width: 394px;
+  margin: auto;
+  width: 350px;
 }
 .target-child {
   align-items: center;
@@ -236,7 +237,6 @@ export default {
   }
 }
 .buffer {
-  background-color: #E0E0E0;
   height: 600px;
 }
 .output {

@@ -7,7 +7,7 @@
     <p>The Intersection Observer API provides the means to observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport.</p>
     <p>The Intersection Observer consists of four components:</p>
     <ul>
-      <li>the "root", which is the parent element the observer is tied to, can be the viewport</li>
+      <li>the "root", which is the parent element the observer is tied to, this can be the viewport</li>
       <li>the "target", which is a child element being observed, there can be more than one target</li>
       <li>the options object, defines certain aspects of the observer's behavior</li>
       <li>the callback function, which is called each time an intersection change is observed</li>

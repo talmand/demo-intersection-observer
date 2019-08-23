@@ -6,7 +6,9 @@
     <hr />
     <p>Please note that this app was built with the <a href="https://github.com/vuejs/vue-function-api">Vue Function API plugin</a>,<br />the code will appear non-standard as a result.</p>
 
-    <h3>Repo | <a href="https://github.com/talmand/demo-intersection-observer">https://github.com/talmand/demo-intersection-observer</a> |</h3>
+    <h3>Repo | <a href="https://github.com/talmand/demo-intersection-observer" target="_blank">https://github.com/talmand/demo-intersection-observer</a> |</h3>
+
+    <div class="instructions">CSS Scroll Snap is in use, up/down arrow keys can be used to change slides...</div>
   </div>
 </section>
 </template>
@@ -32,5 +34,16 @@ h3 {
 }
 p {
   text-align: center;
+}
+
+.instructions {
+  bottom: 2rem;
+  font-size: 2rem;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 90%;
 }
 </style>
