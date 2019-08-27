@@ -121,7 +121,7 @@ html {
 }
 
 body {
-  background-color: #333333;
+  background-color: #F5F5F5;
   color: #333333;
   height: 100vh;
   overflow: auto;
@@ -216,8 +216,6 @@ section {
 
   .container {
     align-items: stretch;
-    background-color: #F5F5F5;
-    border: 7px solid rebeccapurple;
     display: flex;
     flex-direction: column;
     justify-content: center;
