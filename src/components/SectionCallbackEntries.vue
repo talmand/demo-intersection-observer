@@ -4,27 +4,25 @@
     <div class="time-seen">{{ timeSeenString }}</div>
 
     <h2>The Callback Entries</h2>
-<prism language="javascript">IntersectionObserverEntry {
-  boundingClientRect: {
-    bottom: 1020.5, left: 0, right: 500, top: 597.5,
-    height: 513, width: 500,
-    x: 0, y: 507.5
-  }
-  intersectionRatio: 0.010721247563352826
-  intersectionRect: {
-    bottom: 513, left: 0, right: 500, top: 507.5,
-    height: 5.5, width: 500,
-    x: 0, y: 507.5
-  }
-  isIntersecting: true
-  rootBounds: {
-    bottom: 513, left: 0, right: 500, top: 0,
-    height: 513, width: 500,
+<prism language="javascript">IntersectionObserverEntry
+  boundingClientRect: DOMRect
+    bottom: 923.3999938964844, top: 771
+    left: 9, right: 420
+    height: 152.39999389648438, width: 411
+    x: 9, y: 771
+    &lt;prototype&gt;: DOMRectPrototype { }
+  intersectionRatio: 0
+  intersectionRect: DOMRect
+    bottom: 0, top: 0
+    left: 0, right: 0
+    height: 0, width: 0
     x: 0, y: 0
-  }
-  target: &lt;div id="target"&gt;
-  time: 363
-}</prism>
+    &lt;prototype&gt;: DOMRectPrototype { }
+  isIntersecting: false
+  rootBounds: null
+  target: &lt;div class="item"&gt;
+  time: 522
+  &lt;prototype&gt;: IntersectionObserverEntryPrototype { }</prism>
 
 <p>The entry object provides details about the target element and its relationship to the root element.</p>
 <p>The "boundingClientRect", "intersectionRect", and "rootBounds" describes the bounding box details, size, and coordinates of the root and target elements. it also gives the information for the intersection box created between the two.</p>

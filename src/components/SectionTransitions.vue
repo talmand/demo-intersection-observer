@@ -241,7 +241,7 @@ export default {
 }
 .output {
   font-size: 2rem;
-  margin: 2rem;
+  margin: 20px;
 }
 
 .targetKey {
@@ -249,7 +249,7 @@ export default {
 }
 
 .panel {
-  margin: 2rem 0;
+  margin: 20px 0;
   position: absolute;
   top: 50px;
 }

@@ -39,13 +39,13 @@ nav {
   background-color: #fff;
   border: {
     color: rebeccapurple;
-    radius: 2rem;
+    radius: 20px;
     style: solid;
     width: 4px;
   }
   border-left-style: none;
-  font-size: 2rem;
-  padding: 0.5rem;
+  font-size: 20px;
+  padding: 5px;
   position: absolute;
   top: 50%;
   transform: translate3d(0, -50%, 0);
@@ -56,11 +56,11 @@ nav {
   border-style: none;
   cursor: pointer;
   display: flex;
-  height: 3rem;
+  height: 20px;
   justify-content: center;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 5px 0;
   padding: 0;
-  width: 3rem;
+  width: 30px;
   
   &:last-child {
     margin-bottom: 0;
@@ -70,15 +70,15 @@ nav {
     border-radius: 50%;
     content: '';
     display: block;
-    height: 2rem;
+    height: 20px;
     opacity: 0.25;
     transition: 0.5s;
-    width: 2rem;
+    width: 20px;
   }
   &.current::after {
-    height: 3rem;
+    height: 24px;
     opacity: 1;
-    width: 3rem;
+    width: 24px;
   }
 }
 </style>

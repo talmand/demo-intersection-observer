@@ -3,7 +3,7 @@
   <div class="container">
     <div class="time-seen">{{ timeSeenString }}</div>
 
-    <h2>Demo: Faking a Position Sticky Event</h2>
+    <h2>Demo: Creating a Position Sticky Event</h2>
     <div class="panel">
       <button @click="show = 'explain'" :class="{active: show === 'explain'}">explanation</button>
       <button @click="show = 'js'" :class="{active: show === 'js'}">javascript</button>
@@ -15,9 +15,10 @@
         <transition name="fade" mode="out-in">
           <div v-if="show === 'explain'" key="explain">
             <h3>We don't know when an element is "sticky"</h3>
-            <p>The "position: sticky" CSS property is a very useful but shy feature; it does not inform the browser of the stickiness state of the element. A needed feature is something like a sticky event.</p>
+            <p>The "position: sticky" CSS property is a very useful but shy feature; it does not inform the browser of the stickiness state of the element. A needed feature is something of a sticky "event".</p>
             <p>Using Intersection Observer a sticky event can be faked so that the element can be altered via CSS and JavaScript based on its current stickiness state.</p>
             <p>To accomplish this requires creative use of the rootMargin of the root element.</p>
+            <p>Another simple example of this can be found <a href="https://jsfiddle.net/talmand/hzxm3gr2/">here</a>.</p>
           </div>
           <div v-else-if="show === 'js'" key="js">
             <h3>Javascript:</h3>
@@ -43,16 +44,18 @@ let io_observer = new IntersectionObserver(io_callback, {
           </div>
           <div v-else-if="show === 'html'" key="html">
             <h3>HTML:</h3>
-<prism language="html">&lt;div class=&quot;target-container&quot;&gt;
-  &lt;div ref=&quot;target&quot;  class=&quot;sticky&quot; :class=&quot;{ event: targetSticky }&quot;&gt;
-    &lt;transition name=&quot;slide-left&quot; mode=&quot;out-in&quot;&gt;
-      &lt;div :key=&quot;&grave;target-${targetSticky}&grave;&quot;&gt;{{ targetText }}&lt;/div&gt;
-    &lt;/transition&gt;
+<prism language="html">&lt;div class="target-container"&gt;
+  &lt;div class="sticky-container sticky-container-top" ref="target" :class="{ active: isSticky }"&gt;
+    &lt;div class="sticky-content"&gt;
+      &lt;transition name="slide-left" mode="out-in"&gt;
+        &lt;div :key="`target-${isSticky}`"&gt;{{ targetText }}&lt;/div&gt;
+      &lt;/transition&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </prism>
             <p>The element with class "target-container" is the parent of the sticky element, which has the purple target background.</p>
-            <p>The element with class "sticky" is the target element the observer is observing. It has a dynamic class that changes the opacity of the background color when it is in the sticky state.</p>
+            <p>The element with class "sticky-container" is the target element the observer is observing. It has a dynamic class that changes the opacity of the background color when it is in the sticky state.</p>
             <p>The inner element with the key attribute with the sticky element's text is made to allow for the slide-left transition with a dynamic key.</p>
           </div>
         </transition>
@@ -62,10 +65,12 @@ let io_observer = new IntersectionObserver(io_callback, {
         <div ref="root" class="root">
           <div class="buffer"></div>
           <div class="target-container">
-            <div ref="target"  class="sticky" :class="{ event: targetSticky }">
-              <transition name="slide-left" mode="out-in">
-                <div :key="`target-${targetSticky}`">{{ targetText }}</div>
-              </transition>
+            <div class="sticky-container sticky-container-top" ref="target" :class="{ active: isSticky }">
+              <div class="sticky-content">
+                <transition name="slide-left" mode="out-in">
+                  <div :key="`target-${isSticky}`">{{ targetText }}</div>
+                </transition>
+              </div>
             </div>
           </div>
           <div class="buffer"></div>
@@ -98,15 +103,15 @@ export default {
   setup (props, context) {
     let timeSeenString = value(null);
     let show = value('explain');
-    let targetSticky = value(false);
+    let isSticky = value(false);
     let targetText = value('not sticky');
     let stickyCodeActive = value(false);
 
     const io_callback = (entries) => {
       entries.forEach(entry => {
         if (stickyCodeActive.value) {
-          targetSticky.value = entry.isIntersecting;
-          targetText.value = targetSticky.value ? 'sticky' : 'not sticky';
+          isSticky.value = entry.isIntersecting;
+          targetText.value = isSticky.value ? 'sticky' : 'not sticky';
         } else {
           targetText.value = 'not awesome';
         }
@@ -123,7 +128,7 @@ export default {
     return {
       timeSeenString,
       show,
-      targetSticky,
+      isSticky,
       targetText,
       stickyCodeActive
     }
@@ -133,7 +138,7 @@ export default {
 
 <style lang="scss" scoped>
 .panel {
-  margin: 2rem 0;
+  margin: 20px 0;
   position: absolute;
   top: 50px;
 }
@@ -168,30 +173,33 @@ export default {
   margin: auto;
   transition: 0.25s;
   width: 300px;
+}
 
-  .sticky {
-    background-color: rgba(0, 128, 0, 1);
-    color: #fff;
-    font-size: 3rem;
-    overflow: hidden;
-    padding: 2rem 0;
-    position: sticky;
-    text-align: center;
-    top: 0;
-    transition: 200ms;
+.sticky-container {
+  position: sticky;
+}
+.sticky-container-top {
+  background-color: rgba(0, 128, 0, 1);
+  color: #fff;
+  font-size: 3rem;
+  overflow: hidden;
+  padding: 20px 0;
+  text-align: center;
+  top: 0;
+  transition: 200ms;
 
-    &.event {
-      background-color: rgba(0, 128, 0, 0.5);
-    }
-    span {
-      position: absolute;
-    }
+  &.active {
+    background-color: rgba(0, 128, 0, 0.5);
+  }
+  span {
+    position: absolute;
   }
 }
+
 .buffer {
   height: 600px;
 }
 .buttons {
-  margin: 2rem 0;
+  margin: 20px 0;
 }
 </style>

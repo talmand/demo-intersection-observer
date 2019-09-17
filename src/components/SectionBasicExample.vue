@@ -37,11 +37,11 @@ observer.observe(targetElement);
 </div>
 
 <div v-else-if="show === 'observer'" key="observer">
-<prism language="javascript">IntersectionObserver {
-  root: &lt;body&gt;,
-  rootMargin: '0px 0px 0px 0px',
-  threshold: Array [ 0 ]
-}</prism>
+<prism language="javascript">IntersectionObserver
+  root: null
+  rootMargin: "0px 0px 0px 0px"
+  thresholds: Array [ 0 ]
+  &lt;prototype&gt;: IntersectionObserverPrototype { }</prism>
 
 <p>The observer object can provide details for the particular observer that invoked the callback function. This can be useful if more than one observer uses the same callback.</p>
 <p>The different entries inside the object relate to the options object originally provided to the observer when it was created.</p>
@@ -84,7 +84,7 @@ export default {
 
 <style lang="scss" scoped>
 .panel {
-  margin: 2rem 0;
+  margin: 20px 0;
   position: absolute;
   top: 50px;
 }

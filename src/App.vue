@@ -13,6 +13,8 @@
     <SectionPositionSticky data-section="sticky" :entry="io_entries.sticky" />
     <SectionTransitions data-section="transitions" :entry="io_entries.transitions" />
     <SectionScrollingEvents data-section="scrolling" :entry="io_entries.scrolling" />
+    <SectionLazyImages data-section="images" :entry="io_entries.images" />
+    <SectionLazyComponents data-section="components" :entry="io_entries.components" />
     <SectionBrowsers data-section="browsers" :entry="io_entries.browsers" />
     <SectionObserverV2 data-section="observerV2" :entry="io_entries.observerV2" />
     <SectionCredits data-section="credits" :entry="io_entries.credits" />
@@ -34,6 +36,8 @@ import SectionWhere from './components/SectionWhere.vue';
 import SectionPositionSticky from './components/SectionPositionSticky.vue';
 import SectionTransitions from './components/SectionTransitions.vue';
 import SectionScrollingEvents from './components/SectionScrollingEvents.vue';
+import SectionLazyImages from './components/SectionLazyImages.vue';
+import SectionLazyComponents from './components/SectionLazyComponents.vue';
 import SectionBrowsers from './components/SectionBrowsers.vue';
 import SectionObserverV2 from './components/SectionObserverV2.vue';
 import SectionCredits from './components/SectionCredits.vue';
@@ -54,6 +58,8 @@ export default {
     SectionPositionSticky,
     SectionTransitions,
     SectionScrollingEvents,
+    SectionLazyImages,
+    SectionLazyComponents,
     SectionBrowsers,
     SectionObserverV2,
     SectionCredits
@@ -78,6 +84,8 @@ export default {
       sticky: { section: 'sticky', isIntersecting: false, time: null },
       transitions: { section: 'transitions', isIntersecting: false, time: null },
       scrolling: { section: 'scrolling', isIntersecting: false, time: null },
+      images: { section: 'images', isIntersecting: false, time: null },
+      components: { section: 'components', isIntersecting: false, time: null },
       browsers: { section: 'browsers', isIntersecting: false, time: null },
       observerV2: { section: 'observerV2', isIntersecting: false, time: null },
       credits: { section: 'credits', isIntersecting: false, time: null }
@@ -114,7 +122,7 @@ export default {
 
 html {
   box-sizing: border-box;
-  font-size: 10px;
+  font-size: 11px;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -136,13 +144,13 @@ body {
 
 h1 {
   font-size: 5rem;
-  margin: 2rem 0;
+  margin: 20px 0;
   text-align: center;
 }
 h2 {
   font-size: 3rem;
-  margin: 2rem 0;
-  padding: 0 0 0 2rem;
+  margin: 20px 0;
+  padding: 0 0 0 20px;
   position: absolute;
   top: 0;
   width: 75%;
@@ -151,9 +159,9 @@ h2 {
     border-bottom: 2px solid #333333;
     content: '';
     display: block;
-    left: -2rem;
+    left: -20px;
     position: relative;
-    top: 0.5rem;
+    top: 5px;
     transition: width 1s 0.5s;
     width: 0;
   }
@@ -161,31 +169,34 @@ h2 {
 h3 {
   font-size: 2rem;
   font-weight: bold;
-  margin: 2rem 0;
+  margin: 20px 0;
 }
 p {
   font-size: 1.8rem;
   line-height: 1.25;
-  margin: 0 0 2rem 0;
+  margin: 0 0 20px 0;
 }
 small {
   font-size: 1.2rem;
-  margin: 1rem;
+  margin: 10px;
+}
+strong {
+  font-weight: 700;
 }
 ul {
   font-size: 2rem;
   line-height: 1.6;
   list-style-type: decimal-leading-zero;
-  margin: 1rem 0 2rem;
-  padding-left: 5rem;
+  margin: 10px 0 20px;
+  padding-left: 50px;
 
   li {
-    padding-left: 1rem;
+    padding-left: 10px;
   }
 }
 pre {
   font-size: 1.4rem !important;
-  margin: 0 0 3rem 0 !important;
+  margin: 0 0 30px 0 !important;
 }
 button {
     background-color: #F5F5F5;
@@ -193,8 +204,8 @@ button {
     color: #C5C5C5;
     cursor: pointer;
     font-size: 1.6rem;
-    margin: 0 2rem 0 0;
-    padding: 0.5rem 1rem;
+    margin: 0 20px 0 0;
+    padding: 5px 10px;
     transition: 0.25s 0.25s;
 
     &.active {
@@ -219,9 +230,9 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 2rem;
+    margin: 20px;
     overflow: auto;
-    padding: 2rem;
+    padding: 20px;
     position: relative;
     width: 75vw;
   }
@@ -230,8 +241,8 @@ section {
 .time-seen {
   font-size: 1.4rem;
   position: absolute;
-  right: 1rem;
-  top: 1rem;
+  right: 10px;
+  top: 10px;
 }
 
 .fade-enter,

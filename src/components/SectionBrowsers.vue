@@ -71,7 +71,6 @@ export default {
     };
 
     const updateObserver = () => {
-      console.log('update');
       io_observer = new IntersectionObserver(io_callback, { root: context.refs.root, threshold: [...Array(100).keys()].map(x => x / 100) });
       io_observer.observe(context.refs.target);
     };
@@ -129,13 +128,13 @@ export default {
 }
 .output {
   font-size: 2rem;
-  margin: 2rem;
+  margin: 20px;
   text-align: center;
   width: 100%;
 }
 
 .panel {
-  margin: 2rem 0;
+  margin: 20px 0;
   position: absolute;
   top: 50px;
 }

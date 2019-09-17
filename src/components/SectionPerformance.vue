@@ -203,7 +203,7 @@ export default {
 <style lang="scss" scoped>
 .demo {
   display: flex;
-  margin-bottom: 3rem;
+  margin-bottom: 30px;
 }
 .demo-left {
   width: 50%;
@@ -216,6 +216,6 @@ export default {
 .buttons {
   display: flex;
   justify-content: center;
-  margin-bottom: 3rem;
+  margin-bottom: 30px;
 }
 </style>

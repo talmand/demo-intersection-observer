@@ -124,6 +124,6 @@ export default {
 }
 .output {
   font-size: 2rem;
-  margin: 2rem;
+  margin: 20px;
 }
 </style>

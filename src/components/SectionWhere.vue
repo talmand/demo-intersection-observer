@@ -16,7 +16,7 @@
     
     if (ratio === 0) {
       positionString.value = 'outside';
-    } else if (ratio &lt; 0.99) {
+    } else if (ratio &lt; 1) {
       if (boundingRect.top &lt; intersectionRect.top) {
         positionString.value = 'on the top';
       } else {
@@ -81,7 +81,7 @@ export default {
         
         if (ratio === 0) {
           positionString.value = 'outside';
-        } else if (ratio < 0.99) {
+        } else if (ratio < 1) {
           if (boundingRect.top < intersectionRect.top) {
             positionString.value = 'on the top';
           } else {
@@ -156,6 +156,6 @@ export default {
 }
 .output {
   font-size: 2rem;
-  margin: 2rem;
+  margin: 20px;
 }
 </style>

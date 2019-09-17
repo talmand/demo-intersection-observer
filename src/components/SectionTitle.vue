@@ -1,7 +1,7 @@
 <template>
 <section id="section_title" :class="{isIntersecting: entry.isIntersecting}">
   <div class="container">
-    <h1>The Intersection Observer</h1>
+    <h1>How the Intersection Observer is Watching</h1>
     <h3>W3C First Public Working Draft Published September 14, 2017</h3>
     <hr />
     <p>Please note that this app was built with the <a href="https://github.com/vuejs/vue-function-api">Vue Function API plugin</a>,<br />the code will appear non-standard as a result.</p>
@@ -26,7 +26,7 @@ export default {
 <style lang="scss" scoped>
 hr {
   border-bottom: 1px solid rebeccapurple;
-  margin: 2rem auto;
+  margin: 20px auto;
   width: 75%;
 }
 h3 {
@@ -37,7 +37,7 @@ p {
 }
 
 .instructions {
-  bottom: 2rem;
+  bottom: 20px;
   font-size: 2rem;
   left: 0;
   margin: auto;

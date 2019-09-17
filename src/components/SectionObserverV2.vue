@@ -20,37 +20,36 @@
       </div>
       <div class="right">
         <h3>Intersection Observer:</h3>
-<prism language="javascript">IntersectionObserver {
-  delay: 100,
-  root: &lt;body&gt;,
-  rootMargin: '0px 0px 0px 0px',
-  threshold: Array [ 0 ],
+<prism language="javascript">IntersectionObserver
+  delay: 500
+  root: null
+  rootMargin: "0px 0px 0px 0px"
+  thresholds: [0]
   trackVisibility: true
-}</prism>
+  __proto__: IntersectionObserver
+</prism>
 
         <h3>Intersection Observer Entry:</h3>
-<prism language="javascript">IntersectionObserverEntry {
-  boundingClientRect: {
-    bottom: 1020.5, left: 0, right: 500, top: 597.5,
-    height: 513, width: 500,
-    x: 0, y: 507.5
-  }
-  intersectionRatio: 0.010721247563352826
-  intersectionRect: {
-    bottom: 513, left: 0, right: 500, top: 507.5,
-    height: 5.5, width: 500,
-    x: 0, y: 507.5
-  }
-  isIntersecting: true
-  isVisible: false
-  rootBounds: {
-    bottom: 513, left: 0, right: 500, top: 0,
-    height: 513, width: 500,
+<prism language="javascript">IntersectionObserverEntry
+  boundingClientRect: DOMRectReadOnly
+    bottom: 682, top: 570
+    height: 112, width: 477
+    left: 9, right: 486
+    x: 9, y: 570
+    __proto__: DOMRectReadOnly
+  intersectionRatio: 0
+  intersectionRect: DOMRectReadOnly
+    bottom: 0, top: 0
+    height: 0, width: 0
+    left: 0, right: 0
     x: 0, y: 0
-  }
-  target: &lt;div id="target"&gt;
-  time: 363
-}</prism>
+    __proto__: DOMRectReadOnly
+  isIntersecting: false
+  isVisible: false
+  rootBounds: null
+  target: div.item
+  time: 244.26500000117812
+  __proto__: IntersectionObserverEntry</prism>
       </div>
     </div>
   </div>
@@ -90,7 +89,7 @@ export default {
   display: flex;
 }
 .left {
-  padding-right: 2rem;
+  padding-right: 20px;
   width: 60%;
 }
 .right {
