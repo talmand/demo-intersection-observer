@@ -1,8 +1,9 @@
 import Vue from 'vue';
-import { watch } from 'vue-function-api';
-import { plugin } from 'vue-function-api';
+import VueCompositionApi from '@vue/composition-api';
 
-Vue.use(plugin);
+Vue.use(VueCompositionApi);
+
+import { watch } from '@vue/composition-api';
 
 export const timeSeenFunction = (props, timeSeenString) => {
   const stop = watch(

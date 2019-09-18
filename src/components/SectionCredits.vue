@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { value } from 'vue-function-api';
+import { ref } from '@vue/composition-api';
 import { timeSeenFunction } from '../functions/utils';
 
 export default {
@@ -42,7 +42,7 @@ export default {
   },
 
   setup (props) {
-    let timeSeenString = value(null);
+    let timeSeenString = ref(null);
     
     timeSeenFunction(props, timeSeenString);
 

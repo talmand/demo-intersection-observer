@@ -55,7 +55,7 @@ const io_callback = (entries) => {
 </template>
 
 <script>
-import { value, onMounted } from 'vue-function-api';
+import { onMounted, ref } from '@vue/composition-api';
 import { timeSeenFunction } from '../functions/utils';
 import Prism from 'vue-prism-component';
 
@@ -71,7 +71,7 @@ export default {
   },
 
   setup (props, context) {
-    let timeSeenString = value(null);
+    let timeSeenString = ref(null);
     let io_observer = null;
 
     const io_callback = (entries) => {

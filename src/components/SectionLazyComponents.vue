@@ -27,9 +27,9 @@
 const io_callback = (entries) => {
   entries.forEach(entry => {
     if (entry.target.dataset.comp === 'compA') {
-      componentStates.value.compA = entry.isIntersecting;
+      componentStates.compA = entry.isIntersecting;
     } else if (entry.isIntersecting) {
-      componentStates.value[entry.target.dataset.comp] = true;
+      componentStates[entry.target.dataset.comp] = true;
       io_observer.unobserve(entry.target);
     }
   });
@@ -62,7 +62,7 @@ const io_callback = (entries) => {
 </template>
 
 <script>
-import { value, onMounted } from 'vue-function-api';
+import { onMounted, reactive, ref } from '@vue/composition-api';
 import { timeSeenFunction } from '../functions/utils';
 import Prism from 'vue-prism-component';
 
@@ -81,9 +81,9 @@ export default {
   },
 
   setup (props, context) {
-    let timeSeenString = value(null);
+    let timeSeenString = ref(null);
     let io_observer = null;
-    let componentStates = value({
+    let componentStates = reactive({
       compA: false,
       compB: false,
       compC: false
@@ -92,9 +92,9 @@ export default {
     const io_callback = (entries) => {
       entries.forEach(entry => {
         if (entry.target.dataset.comp === 'compA') {
-          componentStates.value.compA = entry.isIntersecting;
+          componentStates.compA = entry.isIntersecting;
         } else if (entry.isIntersecting) {
-          componentStates.value[entry.target.dataset.comp] = true;
+          componentStates[entry.target.dataset.comp] = true;
           io_observer.unobserve(entry.target);
         }
       });

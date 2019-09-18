@@ -4,7 +4,7 @@
     <h1>How the Intersection Observer is Watching</h1>
     <h3>W3C First Public Working Draft Published September 14, 2017</h3>
     <hr />
-    <p>Please note that this app was built with the <a href="https://github.com/vuejs/vue-function-api">Vue Function API plugin</a>,<br />the code will appear non-standard as a result.</p>
+    <p>Please note that this app was built with the <a href="https://github.com/vuejs/composition-api">Vue Composition API plugin</a>,<br />the code will appear non-standard as a result.</p>
 
     <h3>Repo | <a href="https://github.com/talmand/demo-intersection-observer" target="_blank">https://github.com/talmand/demo-intersection-observer</a> |</h3>
 

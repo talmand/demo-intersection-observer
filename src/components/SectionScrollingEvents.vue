@@ -14,6 +14,7 @@
       context.refs.root.addEventListener('scroll', scrollingEvents);
     } else {
       context.refs.root.removeEventListener('scroll', scrollingEvents);
+      scrollEventTimestamp.value = 0;
     }
   });
 };
@@ -38,7 +39,7 @@
 </template>
 
 <script>
-import { value, onMounted } from 'vue-function-api';
+import { onMounted, ref } from '@vue/composition-api';
 import { timeSeenFunction } from '../functions/utils';
 import Prism from 'vue-prism-component';
 
@@ -54,8 +55,8 @@ export default {
   },
 
   setup (props, context) {
-    let timeSeenString = value(null);
-    let scrollEventTimestamp = value(0);
+    let timeSeenString = ref(null);
+    let scrollEventTimestamp = ref(0);
 
     const scrollingEvents = (e) => {
       scrollEventTimestamp.value = e.timeStamp;

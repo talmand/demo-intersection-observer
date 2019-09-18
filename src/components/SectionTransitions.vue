@@ -17,7 +17,7 @@
             <p>This is the onMounted function for this component.</p>
 <prism language="javascript">onMounted(() => {
   let io_observer = new IntersectionObserver(io_callback, {
-    root: context.refs.root, rootMargin: '-100px 0px -150px 0px', threshold: 0 
+    root: context.refs.root, rootMargin: '-100px 0px -150px 0px', threshold: 0
   });
   io_observer.observe(context.refs.target);
 
@@ -36,12 +36,11 @@
   entries.forEach(entry => {
     if (entry.target.classList.contains('target')) {
       targetKey.value = entry.isIntersecting ? 'active' : 'inactive';
-      targetString.value = entry.isIntersecting ? 
+      targetString.value = entry.isIntersecting ?
         'intersecting!' : 'not intersecting...';
     }
 
-    children_isIntersecting.value[`child${entry.target.dataset.child}`]
-       = entry.isIntersecting;
+    children_isIntersecting[`child${entry.target.dataset.child}`] = entry.isIntersecting;
   });
 };
 </prism>
@@ -133,7 +132,7 @@
 </template>
 
 <script>
-import { value, onMounted } from 'vue-function-api';
+import { onMounted, reactive, ref } from '@vue/composition-api';
 import { timeSeenFunction } from '../functions/utils';
 import Prism from 'vue-prism-component';
 
@@ -149,11 +148,11 @@ export default {
   },
 
   setup (props, context) {
-    let show = value('mounted');
-    let timeSeenString = value(null);
-    let targetKey = value('inactive');
-    let targetString = value('');
-    let children_isIntersecting = value({
+    let show = ref('mounted');
+    let timeSeenString = ref(null);
+    let targetKey = ref('inactive');
+    let targetString = ref('');
+    let children_isIntersecting = reactive({
       child1: false,
       child2: false,
       child3: false,
@@ -169,7 +168,7 @@ export default {
           targetString.value = entry.isIntersecting ? 'intersecting!' : 'not intersecting...';
         }
 
-        children_isIntersecting.value[`child${entry.target.dataset.child}`] = entry.isIntersecting;
+        children_isIntersecting[`child${entry.target.dataset.child}`] = entry.isIntersecting;
       });
     };
 

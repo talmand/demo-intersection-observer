@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { onMounted, value } from 'vue-function-api';
+import { onMounted, reactive } from '@vue/composition-api';
 
 import PositionIndicator from './components/PositionIndicator.vue';
 import SectionTitle from './components/SectionTitle.vue';
@@ -72,7 +72,7 @@ export default {
       threshold: 0
     };
     let io_observer = null;
-    let io_entries = value({
+    let io_entries = reactive({
       title: { section: 'title', isIntersecting: false, time: null },
       description: { section: 'description', isIntersecting: false, time: null },
       basicExample: { section: 'basicExample', isIntersecting: false, time: null },
@@ -93,7 +93,7 @@ export default {
 
     const io_callback = (entries) => {
       entries.forEach(entry => {
-        io_entries.value[entry.target.dataset.section] = {
+        io_entries[entry.target.dataset.section] = {
           section: entry.target.dataset.section,
           isIntersecting: entry.isIntersecting,
           time: entry.time
@@ -148,7 +148,7 @@ h1 {
   text-align: center;
 }
 h2 {
-  font-size: 3rem;
+  font-size: 30px;
   margin: 20px 0;
   padding: 0 0 0 20px;
   position: absolute;
@@ -239,7 +239,7 @@ section {
 }
 
 .time-seen {
-  font-size: 1.4rem;
+  font-size: 14px;
   position: absolute;
   right: 10px;
   top: 10px;

@@ -25,8 +25,8 @@
 <prism language="javascript">const io_callback = (entries) => {
   entries.forEach(entry => {
     if (stickyCodeActive.value) {
-      targetSticky.value = entry.isIntersecting;
-      targetText.value = targetSticky.value ? 'sticky' : 'not sticky';
+      isSticky.value = entry.isIntersecting;
+      targetText.value = isSticky.value ? 'sticky' : 'not sticky';
     } else {
       targetText.value = 'not awesome';
     }
@@ -45,7 +45,8 @@ let io_observer = new IntersectionObserver(io_callback, {
           <div v-else-if="show === 'html'" key="html">
             <h3>HTML:</h3>
 <prism language="html">&lt;div class="target-container"&gt;
-  &lt;div class="sticky-container sticky-container-top" ref="target" :class="{ active: isSticky }"&gt;
+  &lt;div class="sticky-container sticky-container-top"
+    ref="target" :class="{ active: isSticky }"&gt;
     &lt;div class="sticky-content"&gt;
       &lt;transition name="slide-left" mode="out-in"&gt;
         &lt;div :key="`target-${isSticky}`"&gt;{{ targetText }}&lt;/div&gt;
@@ -85,7 +86,7 @@ let io_observer = new IntersectionObserver(io_callback, {
 </template>
 
 <script>
-import { value, onMounted } from 'vue-function-api';
+import { onMounted, ref } from '@vue/composition-api';
 import { timeSeenFunction } from '../functions/utils';
 import Prism from 'vue-prism-component';
 
@@ -101,11 +102,11 @@ export default {
   },
 
   setup (props, context) {
-    let timeSeenString = value(null);
-    let show = value('explain');
-    let isSticky = value(false);
-    let targetText = value('not sticky');
-    let stickyCodeActive = value(false);
+    let timeSeenString = ref(null);
+    let show = ref('explain');
+    let isSticky = ref(false);
+    let targetText = ref('not sticky');
+    let stickyCodeActive = ref(false);
 
     const io_callback = (entries) => {
       entries.forEach(entry => {

@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { value, onMounted } from 'vue-function-api';
+import { onMounted, ref } from '@vue/composition-api';
 import { timeSeenFunction } from '../functions/utils';
 
 export default {
@@ -59,9 +59,9 @@ export default {
   },
 
   setup (props, context) {
-    let show = value('transform');
-    let timeSeenString = value(null);
-    let intersectionRatio = value(null);
+    let show = ref('transform');
+    let timeSeenString = ref(null);
+    let intersectionRatio = ref(null);
     let io_observer = null;
 
     const io_callback = entries => {

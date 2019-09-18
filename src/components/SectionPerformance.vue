@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { value, onMounted } from 'vue-function-api';
+import { onMounted, ref, reactive } from '@vue/composition-api';
 import { timeSeenFunction } from '../functions/utils';
 import Chart from 'chart.js';
 
@@ -44,39 +44,39 @@ export default {
   },
 
   setup (props, context) {
-    let timeSeenString = value(null);
+    let timeSeenString = ref(null);
     let osxChart = null;
     let winChart = null;
-    let osxChartData = value({
+    let osxChartData = reactive({
       scripting: [54.8, 0, 0, 0, 0, 0, 0],
       rendering: [34.4, 0, 0, 0, 0, 0, 0],
       painting: [36.4, 0, 0, 0, 0, 0, 0],
       system: [104.2, 0, 0, 0, 0, 0, 0]
     });
-    let winChartData = value({
+    let winChartData = reactive({
       scripting: [87.4, 0, 0, 0, 0, 0, 0],
       rendering: [79.4, 0, 0, 0, 0, 0, 0],
       painting: [57.4, 0, 0, 0, 0, 0, 0],
       system: [140.2, 0, 0, 0, 0, 0, 0]
     });
-    let io_test1Active = value(false);
-    let io_test2Active = value(false);
-    let io_test3Active = value(false);
-    let se_test1Active = value(false);
-    let se_test2Active = value(false);
-    let se_test3Active = value(false);
+    let io_test1Active = ref(false);
+    let io_test2Active = ref(false);
+    let io_test3Active = ref(false);
+    let se_test1Active = ref(false);
+    let se_test2Active = ref(false);
+    let se_test3Active = ref(false);
 
     let updateData = (index, osxData, winData) => {
-      osxChartData.value.scripting[index] = osxData[0];
-      osxChartData.value.rendering[index] = osxData[1];
-      osxChartData.value.painting[index] = osxData[2];
-      osxChartData.value.system[index] = osxData[3];
+      osxChartData.scripting[index] = osxData[0];
+      osxChartData.rendering[index] = osxData[1];
+      osxChartData.painting[index] = osxData[2];
+      osxChartData.system[index] = osxData[3];
       osxChart.update();
 
-      winChartData.value.scripting[index] = winData[0];
-      winChartData.value.rendering[index] = winData[1];
-      winChartData.value.painting[index] = winData[2];
-      winChartData.value.system[index] = winData[3];
+      winChartData.scripting[index] = winData[0];
+      winChartData.rendering[index] = winData[1];
+      winChartData.painting[index] = winData[2];
+      winChartData.system[index] = winData[3];
       winChart.update();
     };
     
@@ -90,19 +90,19 @@ export default {
           datasets: [{
             label: 'Scripting',
             backgroundColor: '#C11826',
-            data: osxChartData.value['scripting']
+            data: osxChartData['scripting']
           }, {
             label: 'Rendering',
             backgroundColor: '#307B21',
-            data: osxChartData.value['rendering']
+            data: osxChartData['rendering']
           }, {
             label: 'Painting',
             backgroundColor: '#C45413',
-            data: osxChartData.value['painting']
+            data: osxChartData['painting']
           }, {
             label: 'System',
             backgroundColor: '#4371AD',
-            data: osxChartData.value['system']
+            data: osxChartData['system']
           }]
         },
         options: {
@@ -141,19 +141,19 @@ export default {
           datasets: [{
             label: 'Scripting',
             backgroundColor: '#C11826',
-            data: winChartData.value['scripting']
+            data: winChartData['scripting']
           }, {
             label: 'Rendering',
             backgroundColor: '#307B21',
-            data: winChartData.value['rendering']
+            data: winChartData['rendering']
           }, {
             label: 'Painting',
             backgroundColor: '#C45413',
-            data: winChartData.value['painting']
+            data: winChartData['painting']
           }, {
             label: 'System',
             backgroundColor: '#4371AD',
-            data: winChartData.value['system']
+            data: winChartData['system']
           }]
         },
         options: {

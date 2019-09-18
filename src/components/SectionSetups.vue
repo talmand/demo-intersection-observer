@@ -34,7 +34,7 @@ let observer3 = new IntersectionObserver(callback, options3);
 </template>
 
 <script>
-import { value } from 'vue-function-api';
+import { ref } from '@vue/composition-api';
 import { timeSeenFunction } from '../functions/utils';
 import Prism from 'vue-prism-component';
 
@@ -50,7 +50,7 @@ export default {
   },
 
   setup (props) {
-    let timeSeenString = value(null);
+    let timeSeenString = ref(null);
     
     timeSeenFunction(props, timeSeenString);
 

@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import { value, onMounted } from 'vue-function-api';
+import { onMounted, ref } from '@vue/composition-api';
 import { timeSeenFunction } from '../functions/utils';
 import Prism from 'vue-prism-component';
 
@@ -68,10 +68,10 @@ export default {
   },
 
   setup (props, context) {
-    let isRootLarge = value(false);
-    let isTargetSmall = value(false);
-    let timeSeenString = value(null);
-    let positionString = value(null);
+    let isRootLarge = ref(false);
+    let isTargetSmall = ref(false);
+    let timeSeenString = ref(null);
+    let positionString = ref(null);
 
     const io_callback = (entries) => {
       entries.forEach(entry => {
