@@ -40,7 +40,8 @@
         'intersecting!' : 'not intersecting...';
     }
 
-    children_isIntersecting[`child${entry.target.dataset.child}`] = entry.isIntersecting;
+    children_isIntersecting[`child${entry.target.dataset.child}`]
+      = entry.isIntersecting;
   });
 };
 </prism>
@@ -60,12 +61,13 @@
     data-child="1"
   &gt;
     &lt;transition name="slide-left"&gt;
-      &lt;div v-if="children_isIntersecting['child1']"&gt;sliding to the left&lt;/div&gt;
+      &lt;div v-if="children_isIntersecting['child1']"&gt;
+        sliding to the left
+      &lt;/div&gt;
     &lt;/transition&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </prism>
-            <p>Notice that the parent has the ref attribute that is used within the JavaScript.</p>
             <p>The headline is wrapped in a transition component with the appropriate dynamic key attribute and text changed from the callback function.</p>
             <p>The target children (only one is shown) are themselves a container with a dynamic class showing intersection status, this changes the background and text color.</p>
             <p>Each target child has a div with a v-if check wrapped in a transition, once the boolean is flipped the transition reacts accordingly.</p>
@@ -249,7 +251,5 @@ export default {
 
 .panel {
   margin: 20px 0;
-  position: absolute;
-  top: 50px;
 }
 </style>

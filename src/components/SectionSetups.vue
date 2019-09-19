@@ -62,5 +62,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.container {
+  text-align: center;
+}
+.language-javascript {
+  margin: 0 auto 20px !important;
+  width: 75%;
+}
 </style>

@@ -85,7 +85,5 @@ export default {
 <style lang="scss" scoped>
 .panel {
   margin: 20px 0;
-  position: absolute;
-  top: 50px;
 }
 </style>

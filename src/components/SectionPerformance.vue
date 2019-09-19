@@ -209,7 +209,7 @@ export default {
   width: 50%;
 }
 .demo-right {
-  height: 500px;
+  height: 300px;
   position: relative;
   width: 50%;
 }

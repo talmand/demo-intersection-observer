@@ -4,6 +4,15 @@
     <div class="time-seen">{{ timeSeenString }}</div>
 
     <h2>The Callback Entries</h2>
+    <div class="demo">
+      <div class="demo-left">
+        <p>The entry object provides details about the target element and its relationship to the root element.</p>
+        <p>The "boundingClientRect", "intersectionRect", and "rootBounds" describes the bounding box details, size, and coordinates of the root and target elements. it also gives the information for the intersection box created between the two.</p>
+        <p>The "intersectionRatio" is the percentage of the target's bounding box that is currently intersecting the root's bounding box. It is possible for the target to be taller than the root, in which case the ratio will never reach one. The ratio also increases and decreases while the target enters and leaves the root.</p>
+        <p>The "isIntersecting" is a boolean that indicates the target element has made contact with the root element.</p>
+        <p>The "time" is the number of milliseconds from the time the observer was created and when this entry was recorded.</p>
+      </div>
+      <div class="demo-right">
 <prism language="javascript">IntersectionObserverEntry
   boundingClientRect: DOMRect
     bottom: 923.3999938964844, top: 771
@@ -23,12 +32,8 @@
   target: &lt;div class="item"&gt;
   time: 522
   &lt;prototype&gt;: IntersectionObserverEntryPrototype { }</prism>
-
-<p>The entry object provides details about the target element and its relationship to the root element.</p>
-<p>The "boundingClientRect", "intersectionRect", and "rootBounds" describes the bounding box details, size, and coordinates of the root and target elements. it also gives the information for the intersection box created between the two.</p>
-<p>The "intersectionRatio" is the percentage of the target's bounding box that is currently intersecting the root's bounding box. It is possible for the target to be taller than the root, in which case the ratio will never reach one. The ratio also increases and decreases while the target enters and leaves the root.</p>
-<p>The "isIntersecting" is a boolean that indicates the target element has made contact with the root element.</p>
-<p>The "time" is the number of milliseconds from the time the observer was created and when this entry was recorded.</p>
+      </div>
+    </div>
   </div>
 </section>
 </template>
@@ -62,5 +67,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.demo {
+  display: flex;
+}
+.demo-left {
+  padding-right: 50px;
+  width: 50%;
+}
+.demo-right {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
 </style>

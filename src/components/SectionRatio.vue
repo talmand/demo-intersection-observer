@@ -90,6 +90,7 @@ export default {
   display: flex;
 }
 .demo-left {
+  padding-right: 50px;
   width: 60%;
 }
 .demo-right {

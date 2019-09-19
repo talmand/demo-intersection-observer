@@ -234,7 +234,7 @@ section {
     overflow: auto;
     padding: 20px;
     position: relative;
-    width: 75vw;
+    width: 90vw;
   }
 }
 

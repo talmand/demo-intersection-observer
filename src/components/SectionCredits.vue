@@ -5,7 +5,7 @@
 
     <h2>Credits</h2>
 
-    <div id="more">
+    <div id="more" class="center">
       <h3>For more information:</h3>
       <p><a href="https://css-tricks.com/the-power-of-named-transitions-in-vue/">CSS-Tricks: The Power of Named Transitions</a></p>
     </div>
@@ -26,6 +26,8 @@
         <p><a href="https://www.chartjs.org/">Chart.js</a></p>
       </div>
     </div>
+    <p class="center"><strong>Special Note:</strong></p>
+    <p class="center"><a href="https://meyerweb.com/eric/thoughts/2014/06/19/rebeccapurple/">#rebeccapurple</a></p>
   </div>
 </section>
 </template>
@@ -56,7 +58,6 @@ export default {
 <style lang="scss" scoped>
 #more {
   margin-bottom: 50px;
-  text-align: center;
 }
 .demo {
   display: flex;
@@ -67,5 +68,8 @@ export default {
 }
 .demo-right {
   width: 50%;
+}
+.center {
+  text-align: center;
 }
 </style>

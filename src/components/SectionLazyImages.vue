@@ -7,8 +7,8 @@
     <div class="demo">
       <div class="demo-left">
         <h3>Load images on demand</h3>
-        <p>This feature may eventually be native to browsers in the future, but here's an easy way to do it today.</p>
-<prism language="html">&lt;img class="target-img" data-src="/images/image_a.png" alt="image a" /&gt;
+        <p>This <a href="https://css-tricks.com/native-lazy-loading/">feature</a> may eventually be native to browsers in the future, but here's an easy way to do it today.</p>
+<prism language="html">&lt;img class="target-img" src="base64 data" data-src="/images/image_a.png" alt="image a" /&gt;
 &lt;img class="target-img" src="/images/dialexa_small.jpg"
     data-src="/images/dialexa.jpg" alt="dialexa" /&gt;
 </prism>
@@ -39,11 +39,11 @@ const io_callback = (entries) => {
         <small>Scroll the images into view to see them load.</small>
         <div ref="root" class="root">
           <div class="buffer"></div>
-          <img class="target-img" data-src="/images/image_a.png" alt="image a" />
+          <img class="target-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/images/image_a.png" alt="image a" />
           <div class="buffer"></div>
-          <img class="target-img" data-src="/images/image_b.png" alt="image b" />
+          <img class="target-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/images/image_b.png" alt="image b" />
           <div class="buffer"></div>
-          <img class="target-img" data-src="/images/image_c.png" alt="image c" />
+          <img class="target-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/images/image_c.png" alt="image c" />
           <div class="buffer"></div>
           <img class="target-img" src="/images/dialexa_small.jpg" data-src="/images/dialexa.jpg" alt="dialexa" />
           <div class="buffer"></div>
@@ -127,7 +127,7 @@ export default {
   height: 110%;
 }
 .target-img {
-  background-color: rebeccapurple;
+  border-top: 1px solid rebeccapurple;
   color: #fff;
   font-size: 2rem;
   display: block;
