@@ -115,7 +115,7 @@ export default {
   background-image: radial-gradient(ellipse at center, #ffffff 0%,#ffffff 14%,#663399 15%,#663399 34%,#ffffff 35%,#ffffff 50%,#663399 51%,#663399 99%);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 200px;
+  background-size: 300px 300px;
   height: 300px;
   pointer-events: none;
   transition: 0.5s;
