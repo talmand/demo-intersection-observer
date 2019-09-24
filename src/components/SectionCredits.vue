@@ -7,6 +7,7 @@
 
     <div id="more" class="center">
       <h3>For more information:</h3>
+      <p><a href="https://css-tricks.com/an-explanation-of-how-the-intersection-observer-watches/">An Explanation of How the Intersection Observer Watches</a></p>
       <p><a href="https://css-tricks.com/the-power-of-named-transitions-in-vue/">CSS-Tricks: The Power of Named Transitions</a></p>
       <p><a href="https://css-tricks.com/animating-with-clip-path/">CSS-Tricks: Animating with Clip-Path</a></p>
     </div>
