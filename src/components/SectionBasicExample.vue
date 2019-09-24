@@ -38,7 +38,7 @@ observer.observe(targetElement);
 
 <div v-else-if="show === 'observer'" key="observer">
 <prism language="javascript">IntersectionObserver
-  root: null
+  root: &lt;body&gt;
   rootMargin: "0px 0px 0px 0px"
   thresholds: Array [ 0 ]
   &lt;prototype&gt;: IntersectionObserverPrototype { }</prism>

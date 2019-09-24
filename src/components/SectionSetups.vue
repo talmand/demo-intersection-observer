@@ -3,10 +3,10 @@
   <div class="container">
     <div class="time-seen">{{ timeSeenString }}</div>
 
-    <h2>Different Setups</h2>
+    <h2>Setup is Flexible</h2>
     <p>There are different ways of setting up Intersection Observers for one or more callbacks and targets.</p>
 
-<p>An intersection observer can observe several elements that share the functionality of the callback.</p>
+    <p>An intersection observer can observe several elements that share the functionality of the callback.</p>
 <prism language="javascript">let observer = new IntersectionObserver(callback, options);
 
 document.querySelectorAll('section').forEach(element => {
@@ -14,7 +14,7 @@ document.querySelectorAll('section').forEach(element => {
 });
 </prism>
 
-<p>Many observers, one target.</p>
+    <p>Many observers, one target.</p>
 <prism language="javascript">let observer1 = new IntersectionObserver(callback1, options1);
 let observer2 = new IntersectionObserver(callback2, options2);
 let observer3 = new IntersectionObserver(callback3, options3);
@@ -24,7 +24,7 @@ observer2.observe(element);
 observer3.observe(element);
 </prism>
 
-<p>Many observers, one callback.</p>
+    <p>Many observers, one callback.</p>
 <prism language="javascript">let observer1 = new IntersectionObserver(callback, options1);
 let observer2 = new IntersectionObserver(callback, options2);
 let observer3 = new IntersectionObserver(callback, options3);
@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+p {
   text-align: center;
 }
 .language-javascript {

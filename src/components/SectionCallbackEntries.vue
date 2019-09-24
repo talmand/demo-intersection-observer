@@ -20,15 +20,20 @@
     height: 152.39999389648438, width: 411
     x: 9, y: 771
     &lt;prototype&gt;: DOMRectPrototype { }
-  intersectionRatio: 0
+  intersectionRatio: 0.11363636363636363
   intersectionRect: DOMRect
-    bottom: 0, top: 0
-    left: 0, right: 0
-    height: 0, width: 0
-    x: 0, y: 0
+    bottom: 471, top: 450
+    height: 21, width: 157
+    left: 9, right: 166
+    x: 9, y: 450
     &lt;prototype&gt;: DOMRectPrototype { }
-  isIntersecting: false
-  rootBounds: null
+  isIntersecting: true
+  rootBounds: DOMRect
+    bottom: 507, top: 8
+    height: 499, width: 176
+    left: 8, right: 184
+    x: 8, y: 8
+    &lt;prototype&gt;: DOMRectPrototype { }
   target: &lt;div class="item"&gt;
   time: 522
   &lt;prototype&gt;: IntersectionObserverEntryPrototype { }</prism>
